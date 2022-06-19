@@ -10,8 +10,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <>
       <Head>
+        <meta charSet="utf-8" />
         <title>Hong Mart</title>
         <meta name='description' content='Awesome Hong Mart' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel='icon' href='/favicon.png' />
       </Head>
 
