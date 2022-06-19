@@ -173,7 +173,7 @@ const Admin = () => {
           onKeyDownInput={() => { }}
         />
         <div className={styles.image_upload_container}>
-          <img src={createObjectURL} alt={'Selected Image'} className={styles.image_upload_preview} />
+          <img src={createObjectURL} alt={''} className={styles.image_upload_preview} />
           <input type="file" name="myImage" onChange={onChangeImagePreview} />
         </div>
         <Button
