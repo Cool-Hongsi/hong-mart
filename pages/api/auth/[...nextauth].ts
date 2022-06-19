@@ -4,15 +4,17 @@ import GoogleProvider from 'next-auth/providers/google';
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "./lib/mongodb";
 
+const isDev = (process.env.NODE_ENV === 'development') ? true : false;
+
 export default NextAuth({
   providers: [
     GitHubProvider({
-      clientId: process.env.GITHUB_ID!, // process.env.NODE_ENV 이용해서 조건문 넣고 Live Site 넣어야 할수도.
-      clientSecret: process.env.GITHUB_SECRET!,
+      clientId: (isDev) ? process.env.GITHUB_ID_DEV! : process.env.GITHUB_ID_PROD!,
+      clientSecret: (isDev) ? process.env.GITHUB_SECRET_DEV! : process.env.GITHUB_SECRET_PROD!,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID!,
-      clientSecret: process.env.GOOGLE_SECRET!,
+      clientId: (isDev) ? process.env.GOOGLE_ID_DEV! : process.env.GOOGLE_ID_PROD!,
+      clientSecret: (isDev) ? process.env.GOOGLE_SECRET_DEV! : process.env.GOOGLE_SECRET_PROD!,
     }),
     // ...add more oauth provider here
   ],
