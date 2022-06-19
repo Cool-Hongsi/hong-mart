@@ -46,7 +46,6 @@ function* hongMartCreateProductRequestFunc(action: HongMartReducerActionInterfac
   body.append("file", action.payload);
   body.append("upload_preset", "hong-mart"); // for cloudinary (hong-mart is directory name)
 
-  // 하기 작업을 Server Side로 빼서 해봤는데 안됨... 그냥 여기서 하고 url을 받고 Server로 보내야 할 듯
   let uploadImageResponseData;
 
   try {
@@ -54,8 +53,8 @@ function* hongMartCreateProductRequestFunc(action: HongMartReducerActionInterfac
       method: "POST",
       body: body
     });
-
     uploadImageResponseData = yield uploadImageResponse.json();
+
     console.log("Success to upload image");
   } catch (err) {
     yield put(hong_mart_create_product_failure({ statusCode: 400, message: err, result: null }));
@@ -70,7 +69,7 @@ function* hongMartCreateProductRequestFunc(action: HongMartReducerActionInterfac
       productPrice: parseFloat(reducerSelect.hongMartReducer.adminProductInfo[CREATE_PRODUCT_PRICE]),
       productPriceSale: parseFloat(reducerSelect.hongMartReducer.adminProductInfo[CREATE_PRODUCT_PRICE_SALE]),
       productDescription: reducerSelect.hongMartReducer.adminProductInfo[CREATE_PRODUCT_DESCRIPTION],
-      productImage: (uploadImageResponseData.url) ? uploadImageResponseData.url : '',
+      productImage: (uploadImageResponseData.secure_url) ? uploadImageResponseData.secure_url : '',
     });
 
     console.log(response);
