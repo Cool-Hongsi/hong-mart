@@ -16,4 +16,4 @@ phases:
       - echo Deployment completed on `date`
       - echo Deploying project started on `date`
       - echo Syncing S3 Content
-      - aws s3 sync ./.next s3://${S3_BUCKET}
+      - aws s3 sync ./build s3://${S3_BUCKET}
