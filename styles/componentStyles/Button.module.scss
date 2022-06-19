@@ -10,5 +10,5 @@
 }
 
 .small_size_button_container {
-  @include buttonStyle(90px, 35px, variable.$backgroundColorDark, variable.$fontColorWhite);
+  @include buttonStyle(95px, 35px, variable.$backgroundColorDark, variable.$fontColorWhite);
 }

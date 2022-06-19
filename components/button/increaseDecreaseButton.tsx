@@ -17,7 +17,7 @@ const IncreaseDecreaseButton = () => {
   useEffect(() => {
     // Initialize Current Product Count as 1
     dispatch(hong_mart_initialize_product_count());
-  }, []);
+  }, [dispatch]);
 
 
   const onClickDecrease = () => {

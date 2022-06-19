@@ -71,7 +71,7 @@ const Header = () => {
     if (typeof window !== 'undefined') {
       dispatch(hong_mart_set_initial_cart_info(getFromCart() ?? []));
     }
-  }, []);
+  }, [dispatch]);
 
   // For Mobile
   const onClickMenuIcon = () => {

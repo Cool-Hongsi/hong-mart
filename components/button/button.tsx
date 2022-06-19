@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonInterface } from '../../service/type';
 import styles from '../../styles/componentStyles/Button.module.scss';
 
-const Button = React.memo(({ title, size, onClickButton }: ButtonInterface) => {
+const Button = ({ title, size, onClickButton }: ButtonInterface) => {
   return (
     <div
       className={
@@ -15,6 +15,6 @@ const Button = React.memo(({ title, size, onClickButton }: ButtonInterface) => {
       {title}
     </div>
   )
-});
+};
 
 export default Button;
