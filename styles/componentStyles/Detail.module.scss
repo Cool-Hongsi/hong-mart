@@ -1,0 +1,105 @@
+@use '../variableStyle' as variable;
+@import '../responsiveStyle';
+@import '../mixinStyle';
+
+.container {
+  border: 2px solid red;
+  padding: 60px 0;
+  @include displayFlex(column, center, center);
+
+  @include mobile {
+    padding: 30px 0;
+  }
+
+  .back_icon_container {
+    width: $tabletSize;
+    margin-bottom: 25px;
+
+    @include mobile {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    @include tablet {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .back_icon {
+      display: inline-block;
+      font-size: 1.3rem;
+      cursor: pointer;
+      fill: variable.$fontColorDark;
+    }
+  }
+
+  .inner_container {
+    width: $tabletSize;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+
+    @include mobile {
+      width: 100%;
+      padding: 0 30px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include tablet {
+      width: 100%;
+      padding: 0 30px;
+      grid-template-columns: 350px 1fr;
+    }
+
+    .product_detail_container {
+      padding: 30px 30px 30px 50px;
+
+      @include mobile {
+        padding: 30px 0px;
+      }
+
+      border: 2px solid salmon;
+
+      .product_button_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include mobile {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include tablet {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .add_to_cart_button_container {
+          @include displayFlex(row, flex-end, center);
+
+          @include mobile {
+            @include displayFlex(row, flex-start, center);
+            margin-top: 20px;
+          }
+
+          @include tablet {
+            @include displayFlex(row, flex-start, center);
+            margin-top: 20px;
+          }
+
+          .add_to_cart_button {
+            width: 200px;
+            height: 40px;
+            background-color: variable.$backgroundColorDark;
+            color: variable.$fontColorWhite;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: right;
+            @include displayFlex(row, center, center);
+
+            @include mobile {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

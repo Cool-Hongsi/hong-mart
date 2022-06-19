@@ -1,0 +1,24 @@
+@use './variableStyle' as variable;
+
+@mixin displayFlex ($direction, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin buttonStyle ($width, $height, $backgroundColor, $fontColor) {
+  width: $width;
+  height: $height;
+  background-color: $backgroundColor;
+  color: $fontColor;
+  cursor: pointer;
+  border-radius: 5px;
+  @include displayFlex(row, center, center);
+}
+
+// @mixin displayGridRepeat ($columnCount) {
+//   display: grid;
+//   grid-template-columns: repeat($columnCount, 1fr);
+//   // other options...
+// }

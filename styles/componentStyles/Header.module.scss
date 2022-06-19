@@ -1,0 +1,175 @@
+@use '../variableStyle' as variable;
+@import '../mixinStyle';
+@import '../responsiveStyle';
+
+.container {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  transition: top 0.5s;
+  background-color: variable.$backgroundColorWhite;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0 0 8px #eeeeee;
+  @include displayFlex(row, center, center);
+
+  .inside_container {
+    @include displayFlex(row, space-between, center);
+    width: $tabletSize;
+    padding: 0;
+
+    @include mobile {
+      padding: 0 30px;
+      width: 100%;
+    }
+
+    @include tablet {
+      padding: 0 30px;
+      width: 100%;
+    }
+
+    .logo {
+      cursor: pointer;
+      font-family: 'Lexend Deca';
+    }
+
+    .navigation {
+      position: relative;
+      @include displayFlex(row, center, center);
+
+      .shop_sub_menu {
+        visibility: hidden;
+        position: absolute;
+        left: -2px; // px 꼭 적어줘야 함...
+        top: 60px; // px 꼭 적어줘야 함...
+        width: 0;
+        z-index: 9999;
+        border: 1px solid rgba(0, 0, 0, .1);
+        background-color: variable.$backgroundColorWhite;
+
+        :hover {
+          background-color: #eee;
+          transition: .5s;
+          cursor: pointer;
+        }
+
+        div {
+          padding: 15px;
+        }
+      }
+
+      >div {
+        margin-left: 40px;
+
+        @include mobile {
+          margin-left: 0px;
+        }
+      }
+
+      .shop_button {
+        @include displayFlex(row, center, center);
+        cursor: pointer;
+        position: relative;
+        height: 60px;
+      }
+
+      .search_icon_container {
+        @include displayFlex(row, center, center);
+        position: relative;
+
+        .search_icon {
+          font-size: 1.3rem;
+          color: variable.$fontColorLightDark;
+          cursor: pointer;
+        }
+
+        .search_container {
+          visibility: hidden;
+          position: absolute;
+          top: 40px;
+          left: -5px;
+          outline: none;
+          border: 1px solid rgba(0, 0, 0, .1);
+          z-index: 9998;
+          padding: 5px 20px;
+          background-color: variable.$backgroundColorWhite;
+
+          @include mobile {
+            left: -20px;
+          }
+
+          .search_container_bottom {
+            @include displayFlex(row, space-between, center);
+            margin: 15px 0;
+
+            >div {
+              font-size: .9rem;
+              cursor: pointer;
+            }
+
+            .close_icon {
+              color: variable.$backgroundColorDark;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      .cart_icon_container {
+        @include displayFlex(row, center, center);
+        cursor: pointer;
+        position: relative;
+
+        .cart_icon {
+          font-size: 1.3rem;
+          color: variable.$fontColorLightDark;
+        }
+
+        .cart_count {
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: variable.$backgroundColorRed;
+          @include displayFlex(row, center, center);
+          font-size: .6rem;
+          color: variable.$fontColorWhite;
+          // font-weight: bold;
+        }
+      }
+
+      .menu_icon {
+        fill: variable.$fontColorDark;
+        cursor: pointer;
+        margin-left: 30px;
+      }
+
+      .top_bar_mobile {
+        @include displayFlex(row, space-between, center);
+        position: fixed;
+        top: -60px;
+        left: 0;
+        height: 60px;
+        width: 100%;
+        transition: .5s;
+        background-color: variable.$backgroundColorWhite;
+        // z-index: 9999;
+        outline: none; // remove outline for focus color
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        // box-shadow: 0 0 8px #eee;
+        padding: 0 20px;
+
+        .shop_each_mobile {
+          display: flex;
+          align-items: center;
+
+          >div:not(:nth-child(4)) {
+            margin-right: 25px;
+          }
+        }
+      }
+    }
+  }
+}

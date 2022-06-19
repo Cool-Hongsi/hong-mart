@@ -1,0 +1,71 @@
+@use '../variableStyle' as variable;
+@import '../responsiveStyle';
+@import '../mixinStyle';
+
+.container {
+  border: 2px solid red;
+  @include displayFlex(row, center, center);
+
+  .inner_container_empty_cart {
+    padding: 80px 0;
+    font-size: 1.6rem;
+  }
+
+  .inner_container {
+    padding: 70px 0;
+    width: $tabletSize;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    column-gap: 50px;
+
+
+    @include mobile {
+      width: 100%;
+      padding: 50px 30px;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 30px;
+    }
+
+    @include tablet {
+      width: 100%;
+      padding: 50px 30px;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 30px;
+    }
+
+    .cart_title_and_delete_container {
+      @include displayFlex(row, space-between, center);
+
+      .cart_title {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+    }
+
+    .total_price_container {
+      padding: 30px;
+      box-shadow: 0 0 8px #eeeeee;
+      border-radius: 10px;
+      height: 240px;
+
+      >div {
+        @include displayFlex(row, space-between, center);
+        margin-bottom: 20px;
+      }
+
+      >div:nth-child(2) {
+        border-bottom: 1px solid variable.$borderColorGrey;
+        padding-bottom: 20px;
+      }
+
+      .check_out_button {
+        background-color: variable.$backgroundColorDark;
+        color: variable.$fontColorWhite;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 13px 0;
+        @include displayFlex(row, center, center);
+      }
+    }
+  }
+}

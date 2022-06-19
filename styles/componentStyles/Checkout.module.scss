@@ -1,0 +1,31 @@
+@use '../variableStyle' as variable;
+@import '../responsiveStyle';
+@import '../mixinStyle';
+
+.container {
+  border: 2px solid red;
+  @include displayFlex(row, center, center);
+
+  .inner_container {
+    border: 2px solid blue;
+    width: $tabletSize;
+    text-align: center;
+    padding: 80px 0;
+    font-size: 1.2rem;
+
+    @include mobile {
+      width: 100%;
+      padding: 80px 30px;
+    }
+
+    @include tablet {
+      width: 100%;
+      padding: 80px 30px;
+    }
+
+    .check_greeting {
+      margin-bottom: 30px;
+      font-size: 1.6rem;
+    }
+  }
+}

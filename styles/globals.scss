@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: 'Questrial';
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Not show scroll bar, but make it work */
+::-webkit-scrollbar {
+  display: none;
+}

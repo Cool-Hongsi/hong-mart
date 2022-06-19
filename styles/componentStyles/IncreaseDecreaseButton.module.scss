@@ -1,0 +1,25 @@
+@use '../variableStyle' as variable;
+@import '../mixinStyle';
+@import '../responsiveStyle';
+
+.increase_decrease_button_container {
+  @include displayFlex(row, flex-start, center);
+
+  .increase_decrease_button {
+    @include buttonStyle(40px, 40px, variable.$backgroundColorLightGrey, variable.$fontColorDark);
+
+    .minus_plus_icon {
+      font-size: .9rem;
+    }
+  }
+
+  .product_count {
+    width: 120px;
+    text-align: center;
+    font-weight: 500;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

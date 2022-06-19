@@ -1,0 +1,35 @@
+@use '../variableStyle' as variable;
+@import '../responsiveStyle';
+@import '../mixinStyle';
+
+.container {
+  height: calc(100vh - 60px);
+  @include displayFlex(row, center, center);
+
+  .auth_list_container {
+    width: $tabletSize;
+    text-align: center;
+    border: 2px solid red;
+    padding: 0 20px 100px 20px;
+    @include displayFlex(column, center, center);
+
+    .auth_intro {
+      font-size: 1.5rem;
+      line-height: 2.8rem;
+    }
+
+    .oauth_container {
+      border-radius: 5px;
+      @include displayFlex(row, center, center);
+      width: 300px;
+      height: 50px;
+      margin-top: 25px;
+      box-shadow: 0 0px 10px variable.$boxShadowColor;
+
+      span {
+        font-size: 1.1rem;
+        padding-left: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use '../variableStyle' as variable;
+@import '../mixinStyle';
+
+.container {
+  padding: 15px 0;
+
+  .product_name {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .product_price_list {
+    @include displayFlex(row, center, center);
+  }
+
+  .product_price_detail {
+    @include displayFlex(row, flex-start, center);
+  }
+
+  .delete_price {
+    text-decoration: line-through;
+    color: variable.$fontColorGrey;
+    margin-right: 10px;
+  }
+
+  .product_category {
+    color: variable.$fontColorGrey;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  .product_description {
+    margin: 20px 0;
+    font-size: .9rem;
+  }
+
+}

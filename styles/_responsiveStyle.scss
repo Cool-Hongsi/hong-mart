@@ -1,0 +1,25 @@
+// Size can be adjusted
+$mobileSize: 768px;
+$tabletSize: 1200px;
+$desktopSize: 1201px;
+
+// 0 - 768
+@mixin mobile {
+  @media screen and (max-width: $mobileSize) {
+    @content;
+  }
+}
+
+// 769 - 1200
+@mixin tablet {
+  @media screen and (min-width: $mobileSize) and (max-width: $tabletSize) {
+    @content;
+  }
+}
+
+// 1201 ~
+@mixin desktop {
+  @media screen and (min-width: $tabletSize) {
+    @content;
+  }
+}

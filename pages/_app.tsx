@@ -1,8 +1,27 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.scss';
+import type { AppProps } from 'next/app';
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
+import Head from 'next/head';
+import { SessionProvider } from "next-auth/react";
+import { wrapper } from '../store';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  return (
+    <>
+      <Head>
+        <title>Hong Mart</title>
+        <meta name='description' content='Awesome Hong Mart' />
+        <link rel='icon' href='/favicon.png' />
+      </Head>
+
+      <SessionProvider session={session}> {/* 하위에서 session을 사용하기 위해 wrapping */}
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </SessionProvider>
+    </>
+  )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);

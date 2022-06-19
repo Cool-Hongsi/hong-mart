@@ -1,0 +1,14 @@
+@use '../variableStyle' as variable;
+@import '../mixinStyle';
+
+.large_size_button_container {
+  @include buttonStyle(230px, 40px, variable.$backgroundColorDark, variable.$fontColorWhite);
+}
+
+.medium_size_button_container {
+  @include buttonStyle(200px, 40px, variable.$backgroundColorDark, variable.$fontColorWhite);
+}
+
+.small_size_button_container {
+  @include buttonStyle(90px, 35px, variable.$backgroundColorDark, variable.$fontColorWhite);
+}
