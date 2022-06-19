@@ -1,0 +1,19 @@
+version: 0.2
+environment_variables:
+  plaintext:
+    S3_BUCKET: hongmart
+phases:
+  pre_build:
+    commands:
+      - echo Deploying started on `date`
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Deployment completed on `date`
+      - echo Deploying project started on `date`
+      - echo Syncing S3 Content
+      - aws s3 sync ./.next s3://${S3_BUCKET}
