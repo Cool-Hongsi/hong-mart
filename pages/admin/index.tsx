@@ -87,6 +87,7 @@ const Admin = () => {
         <div className={styles.inner_container}>
           <Input
             type={GENERAL_INPUT}
+            isNumber={false}
             placeholder="Admin Username"
             name={ADMIN_USERNAME}
             value={hongMartReducerSelector.adminInfo[ADMIN_USERNAME]}
@@ -95,6 +96,7 @@ const Admin = () => {
           />
           <Input
             type={GENERAL_INPUT}
+            isNumber={false}
             placeholder="Admin Password"
             name={ADMIN_PASSWORD}
             value={hongMartReducerSelector.adminInfo[ADMIN_PASSWORD]}
@@ -142,6 +144,7 @@ const Admin = () => {
         </div>
         <Input
           type={GENERAL_INPUT}
+          isNumber={false}
           placeholder="Name"
           name={CREATE_PRODUCT_NAME}
           value={hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_NAME]}
@@ -150,6 +153,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={true}
           placeholder="Price"
           name={CREATE_PRODUCT_PRICE}
           value={hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_PRICE]}
@@ -158,6 +162,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={true}
           placeholder="Price Sale (%)"
           name={CREATE_PRODUCT_PRICE_SALE}
           value={hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_PRICE_SALE]}
@@ -166,6 +171,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={false}
           placeholder="Description"
           name={CREATE_PRODUCT_DESCRIPTION}
           value={hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_DESCRIPTION]}
@@ -228,6 +234,7 @@ const Admin = () => {
         <h3>{hongMartReducerSelector.adminProductInfo[UPDATE_PRODUCT_ID]} - {hongMartReducerSelector.adminProductInfo[UPDATE_PRODUCT_CATEGORY]}</h3>
         <Input
           type={GENERAL_INPUT}
+          isNumber={false}
           placeholder="Product Name"
           name={UPDATE_PRODUCT_NAME}
           value={hongMartReducerSelector.adminProductInfo[UPDATE_PRODUCT_NAME]}
@@ -236,6 +243,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={true}
           placeholder="Product Price"
           name={UPDATE_PRODUCT_PRICE}
           value={hongMartReducerSelector.adminProductInfo[UPDATE_PRODUCT_PRICE]}
@@ -244,6 +252,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={true}
           placeholder="Product Price Sale (%)"
           name={UPDATE_PRODUCT_PRICE_SALE}
           value={hongMartReducerSelector.adminProductInfo[UPDATE_PRODUCT_PRICE_SALE]}
@@ -252,6 +261,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={false}
           placeholder="Product Description"
           name={UPDATE_PRODUCT_DESCRIPTION}
           value={hongMartReducerSelector.adminProductInfo[UPDATE_PRODUCT_DESCRIPTION]}
@@ -273,6 +283,7 @@ const Admin = () => {
 
         <Input
           type={GENERAL_INPUT}
+          isNumber={false}
           placeholder="Product ID"
           name={DELETE_PRODUCT_ID}
           value={hongMartReducerSelector.adminProductInfo[DELETE_PRODUCT_ID]}
@@ -281,6 +292,7 @@ const Admin = () => {
         />
         <Input
           type={GENERAL_INPUT}
+          isNumber={false}
           placeholder="Product Category"
           name={DELETE_PRODUCT_CATEGORY}
           value={hongMartReducerSelector.adminProductInfo[DELETE_PRODUCT_CATEGORY]}

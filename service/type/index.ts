@@ -20,6 +20,7 @@ export interface ButtonInterface {
 
 export interface InputInterface {
   type: string,
+  isNumber: boolean,
   placeholder: string,
   name: string,
   value: string,

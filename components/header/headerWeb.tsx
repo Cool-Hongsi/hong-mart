@@ -65,6 +65,7 @@ const HeaderWeb = ({ gotoCartPage, onClickCloseSearchContainer, onChangeSearchIn
         <div className={styles.search_container}>
           <Input
             type={SEARCH_INPUT}
+            isNumber={false}
             placeholder={'Type Search'}
             name={SEARCH_INFO_INPUT}
             value={hongMartReducerSelector.searchInfo[SEARCH_INFO_INPUT]}

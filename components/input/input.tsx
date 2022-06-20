@@ -5,11 +5,12 @@ import { INPUT_TYPE } from "../../service/const/generalConst";
 
 const { GENERAL_INPUT } = INPUT_TYPE;
 
-const Input = ({ type, placeholder, name, value, onChangeInput, onKeyDownInput }: InputInterface) => {
+const Input = ({ type, isNumber, placeholder, name, value, onChangeInput, onKeyDownInput }: InputInterface) => {
   return (
     <div>
       <input
         className={(type === GENERAL_INPUT) ? styles.general_input_container : styles.search_input_container}
+        type={(isNumber) ? 'number' : 'text'}
         placeholder={placeholder}
         name={name}
         value={value}
