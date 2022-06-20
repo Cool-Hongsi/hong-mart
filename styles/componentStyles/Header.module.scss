@@ -97,6 +97,9 @@
 
           @include mobile {
             left: -20px;
+            border-left: none;
+            border-right: none;
+            width: 100vw;
           }
 
           .search_container_bottom {

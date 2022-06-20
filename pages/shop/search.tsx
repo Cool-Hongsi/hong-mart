@@ -23,10 +23,11 @@ const Search = ({ productList }: ProductListInterface) => {
 
   return (
     <section className={styles.container}>
-
-      <p className={styles.category_title_container}>
-        {router.query.searchby?.toString()}
-      </p>
+      <div className={styles.category_title_container}>
+        <p>
+          {router.query.searchby?.toString()}
+        </p>
+      </div>
 
       {productList && productList.length > 0
         ?

@@ -25,7 +25,9 @@ const Category = ({ productList }: ProductListInterface) => {
   return (
     <section className={styles.container}>
       <div className={styles.category_title_container}>
-        {router.query.category?.toString().toUpperCase()}
+        <p>
+          {router.query.category?.toString().toUpperCase()}
+        </p>
       </div>
 
       {productList && productList.length > 0

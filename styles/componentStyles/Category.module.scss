@@ -8,14 +8,29 @@
   .category_title_container {
     width: 100%;
     padding: 60px 0;
-    text-align: center;
-    font-size: 2rem;
-    letter-spacing: 2px;
     box-shadow: 0 0px 10px variable.$boxShadowColor;
+    @include displayFlex(row, center, center);
+
+    >p {
+      width: $tabletSize;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-align: center;
+
+      @include tablet {
+        padding: 0 35px;
+        width: 100%;
+      }
+
+      @include mobile {
+        padding: 0 35px;
+        width: 100%;
+        font-size: 1.6rem;
+      }
+    }
 
     @include mobile {
-      padding: 35px 0;
-      font-size: 1.6rem;
+      padding: 40px 0;
     }
   }
 
