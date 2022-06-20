@@ -10,12 +10,12 @@ const Checkout = () => {
 
   if (session) {
     return (
-      <div className={styles.container}>
+      <section className={styles.container}>
         <div className={styles.inner_container}>
-          <div className={styles.check_greeting}>Hello! {session!.user!.name}</div>
+          <p className={styles.check_greeting}>Hello! {session!.user!.name}</p>
           Checkout page is currently on construction
         </div>
-      </div>
+      </section>
     )
   }
 };

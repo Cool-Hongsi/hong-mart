@@ -3,16 +3,16 @@ import styles from '../../styles/componentStyles/Footer.module.scss';
 
 const Footer = React.memo(() => {
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <div className={styles.inner_container}>
-        <div>
+        <p>
           This is simple shopping website with NextJS &amp; ReactJS
-        </div>
-        <div>
-          Jake Hong
-        </div>
+        </p>
+        <p>
+          Created by Jake Hong
+        </p>
       </div>
-    </div>
+    </footer>
   )
 });
 

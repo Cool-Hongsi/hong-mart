@@ -23,8 +23,7 @@ const Category = ({ productList }: ProductListInterface) => {
   };
 
   return (
-    <div className={styles.container}>
-
+    <section className={styles.container}>
       <div className={styles.category_title_container}>
         {router.query.category?.toString().toUpperCase()}
       </div>
@@ -55,7 +54,7 @@ const Category = ({ productList }: ProductListInterface) => {
           No Product List
         </div>
       }
-    </div>
+    </section>
   )
 };
 

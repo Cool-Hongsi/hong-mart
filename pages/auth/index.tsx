@@ -10,14 +10,14 @@ const { HOME } = ROUTE_CONST;
 
 const Auth = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.auth_list_container}>
-        <div className={styles.auth_intro}>
+        <p className={styles.auth_intro}>
           This is personal project.
-        </div>
-        <div className={styles.auth_intro}>
+        </p>
+        <p className={styles.auth_intro}>
           Please simply sign in with 2 OAuth providers.
-        </div>
+        </p>
         <Link href={'/api/auth/signin'}>
           <a onClick={(e) => {
             e.preventDefault();
@@ -25,9 +25,9 @@ const Auth = () => {
               callbackUrl: HOME
             });
           }}>
-            <div className={styles.oauth_container}>
+            <p className={styles.oauth_container}>
               <GitHubIcon /><span>Sign in with Github</span>
-            </div>
+            </p>
           </a>
         </Link>
 
@@ -38,13 +38,13 @@ const Auth = () => {
               callbackUrl: HOME
             });
           }}>
-            <div className={styles.oauth_container}>
+            <p className={styles.oauth_container}>
               <GoogleIcon /><span>Sign in with Google</span>
-            </div>
+            </p>
           </a>
         </Link>
       </div>
-    </div>
+    </section>
   )
 };
 

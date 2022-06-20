@@ -1,3 +1,4 @@
+@use './variableStyle' as variable;
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&display=swap');
 
@@ -12,9 +13,19 @@
   font-family: 'Questrial';
 }
 
+main {
+  min-height: calc(100vh - 60px); // 60px => Header Height
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  background-color: variable.$backgroundColorWhite;
+  border: none;
+  cursor: pointer;
 }
 
 /* Not show scroll bar, but make it work */

@@ -58,7 +58,8 @@
         }
       }
 
-      >div {
+      >div,
+      >button {
         margin-left: 40px;
 
         @include mobile {
@@ -109,6 +110,7 @@
             .close_icon {
               color: variable.$backgroundColorDark;
               font-size: 1.1rem;
+              cursor: pointer;
             }
           }
         }

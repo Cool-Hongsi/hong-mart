@@ -20,16 +20,16 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.greeting}>
-        <div>
+        <p>
           Hello, {printUserName()}
-        </div>
-        <div>
+        </p>
+        <p>
           <span>HONG MART</span>
-        </div>
+        </p>
       </div>
-    </div>
+    </section>
   )
 };
 

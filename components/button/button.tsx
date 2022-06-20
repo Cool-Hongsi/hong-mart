@@ -4,7 +4,7 @@ import styles from '../../styles/componentStyles/Button.module.scss';
 
 const Button = React.memo(({ title, size, onClickButton }: ButtonInterface) => {
   return (
-    <div
+    <button
       className={
         (size === 'LARGE') ? styles.large_size_button_container :
           (size === 'MEDIUM') ? styles.medium_size_button_container :
@@ -13,7 +13,7 @@ const Button = React.memo(({ title, size, onClickButton }: ButtonInterface) => {
       onClick={onClickButton}
     >
       {title}
-    </div>
+    </button>
   )
 });
 

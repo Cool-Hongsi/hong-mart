@@ -64,7 +64,7 @@ const Detail = (props: ProductSingleInterface) => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.back_icon_container}>
         <ArrowBackIosNewIcon className={styles.back_icon} onClick={onClickBackButton} />
       </div>
@@ -88,11 +88,11 @@ const Detail = (props: ProductSingleInterface) => {
             <div className={styles.increase_decrease_button}>
               <IncreaseDecreaseButton />
             </div>
-            <div className={styles.add_to_cart_button_container} onClick={onClickAddToCart}>
+            <button className={styles.add_to_cart_button_container} onClick={onClickAddToCart}>
               <div className={styles.add_to_cart_button}>
                 Add To Cart
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ const Detail = (props: ProductSingleInterface) => {
         snackbarClose={closeSnackbar}
         snackbarMessage={"Successfully added in cart"}
       />
-    </div>
+    </section>
   )
 };
 

@@ -8,9 +8,9 @@ import {
   hong_mart_initialize_product_count
 } from '../../store/modules/hongmart/hongmartAction';
 import { useEffect } from 'react';
+import React from 'react';
 
 const IncreaseDecreaseButton = () => {
-
   const hongMartReducerSelector = useSelector((state: RootState) => state.hongMartReducer);
   const dispatch = useDispatch();
 
@@ -31,15 +31,15 @@ const IncreaseDecreaseButton = () => {
 
   return (
     <div className={styles.increase_decrease_button_container}>
-      <div className={styles.increase_decrease_button} onClick={onClickDecrease}>
+      <button className={styles.increase_decrease_button} onClick={onClickDecrease}>
         <RemoveIcon className={styles.minus_plus_icon} />
-      </div>
-      <div className={styles.product_count}>
+      </button>
+      <p className={styles.product_count}>
         {hongMartReducerSelector.productCount}
-      </div>
-      <div className={styles.increase_decrease_button} onClick={onClickIncrease}>
+      </p>
+      <button className={styles.increase_decrease_button} onClick={onClickIncrease}>
         <AddIcon className={styles.minus_plus_icon} />
-      </div>
+      </button>
     </div>
   )
 };

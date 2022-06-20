@@ -83,8 +83,10 @@ const Admin = () => {
 
   if (!hongMartReducerSelector.adminLoginAPI.result) {
     return (
-      <div className={styles.container_no_login}>
+      <section className={styles.container_no_login}>
         <div className={styles.inner_container}>
+          <h2>Admin Login</h2>
+
           <Input
             type={GENERAL_INPUT}
             isNumber={false}
@@ -115,15 +117,15 @@ const Admin = () => {
             )}
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 
   return (
-    <div className={styles.container_yes_login}>
+    <section className={styles.container_yes_login}>
       <div className={styles.inner_container}>
         {hongMartReducerSelector.isLoading && (
-          <div style={{ position: 'fixed', top: '80px', right: '30px' }}>
+          <div className={styles.loading_indicator}>
             <CircularProgress style={{ color: '#333' }} size={30} />
           </div>
         )}
@@ -187,9 +189,9 @@ const Admin = () => {
           size={'LARGE'}
           onClickButton={onClickCreateProduct}
         />
-        <div className={styles.error_message_container}>
+        <p className={styles.error_message_container}>
           {hongMartReducerSelector.createProductAPI.message}
-        </div>
+        </p>
 
         <div className={styles.boundary_line}></div>
 
@@ -211,9 +213,12 @@ const Admin = () => {
           size={'LARGE'}
           onClickButton={onClickReadProduct}
         />
-        <div className={styles.error_message_container}>
+        <p className={styles.error_message_container}>
           {hongMartReducerSelector.readProductAPI.message}
-        </div>
+        </p>
+        {hongMartReducerSelector.readProductAPI.message && (
+          <span>(Please select one of products to update or delete)</span>
+        )}
 
         {hongMartReducerSelector.readProductAPI.result && (
           <div className={styles.readProduct_container}>
@@ -273,9 +278,9 @@ const Admin = () => {
           size={'LARGE'}
           onClickButton={onClickUpdateProduct}
         />
-        <div className={styles.error_message_container}>
+        <p className={styles.error_message_container}>
           {hongMartReducerSelector.updateProductAPI.message}
-        </div>
+        </p>
 
         <div className={styles.boundary_line}></div>
 
@@ -305,11 +310,11 @@ const Admin = () => {
           onClickButton={onClickDeleteProduct}
         />
 
-        <div className={styles.error_message_container}>
+        <p className={styles.error_message_container}>
           {hongMartReducerSelector.deleteProductAPI.message}
-        </div>
+        </p>
       </div>
-    </div>
+    </section>
   )
 };
 

@@ -3,7 +3,7 @@
 @import '../responsiveStyle';
 
 .container {
-  height: 250px;
+  height: 130px;
   background-color: variable.$backgroundColorDark;
   color: variable.$fontColorWhite;
   @include displayFlex(row, center, center);
@@ -18,8 +18,8 @@
       @include displayFlex(column, center, center);
       text-align: center;
 
-      div {
-        margin: 20px 0;
+      p {
+        margin: 12px 0;
       }
     }
 

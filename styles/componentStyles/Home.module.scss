@@ -3,13 +3,12 @@
 @import '../mixinStyle';
 
 .container {
-  height: calc(100vh - 60px);
   @include displayFlex(row, center, center);
 
   .greeting {
     width: $tabletSize;
     text-align: center;
-    padding-bottom: 180px;
+    padding-top: 150px;
 
     :nth-child(1) {
       font-size: 2.5rem;

@@ -25,7 +25,7 @@ username: hongsi
 password: abcd1234
 ```
 ### - User Page
-- Shop by fruit, grocery, meal
+- Shop by fruit, vegetable, meal
 - Detail product information
 - Shop by search term
 - Cart with summary (Store selected products info in local storage)
@@ -33,7 +33,7 @@ password: abcd1234
 ```
 /shop/[category]
 => /shop/fruit
-=> /shop/grocery
+=> /shop/vegetable
 => /shop/meal
 
 /shop/[category]/detail?productId=*****

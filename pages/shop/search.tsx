@@ -22,11 +22,11 @@ const Search = ({ productList }: ProductListInterface) => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
 
-      <div className={styles.category_title_container}>
+      <p className={styles.category_title_container}>
         {router.query.searchby?.toString()}
-      </div>
+      </p>
 
       {productList && productList.length > 0
         ?
@@ -54,7 +54,7 @@ const Search = ({ productList }: ProductListInterface) => {
           No Product List
         </div>
       }
-    </div>
+    </section>
   )
 };
 

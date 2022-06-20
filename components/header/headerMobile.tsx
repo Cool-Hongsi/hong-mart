@@ -45,17 +45,17 @@ const HeaderMobile = ({ gotoCartPage, onClickCloseSearchContainer, onChangeSearc
   };
 
   return (
-    <div className={styles.navigation}>
-      <div className={styles.cart_icon_container} onClick={gotoCartPage}>
+    <nav className={styles.navigation}>
+      <button className={styles.cart_icon_container} onClick={gotoCartPage}>
         <ShoppingCartOutlinedIcon className={styles.cart_icon} />
         {hongMartReducerSelector.cartInfo.length > 0 && (
           <div className={styles.cart_count}>
             {hongMartReducerSelector.cartInfo.length}
           </div>
         )}
-      </div>
+      </button>
       <MenuIcon className={styles.menu_icon} onClick={onClickMenuIcon} />
-      <div className={styles.top_bar_mobile} ref={shopSubMenuRef} tabIndex={0} onBlur={onBlurMenuIcon}>
+      <section className={styles.top_bar_mobile} ref={shopSubMenuRef} tabIndex={0} onBlur={onBlurMenuIcon}>
         <div className={styles.shop_each_mobile}>
           <div className={styles.search_icon_container}>
             <SearchIcon className={styles.search_icon} onClick={onClickSearchIcon} />
@@ -70,12 +70,12 @@ const HeaderMobile = ({ gotoCartPage, onClickCloseSearchContainer, onChangeSearc
                 onKeyDownInput={onKeyDownSearchInput}
               />
               <div className={styles.search_container_bottom}>
-                <div onClick={onClickCloseSearchContainer}>
+                <button onClick={onClickCloseSearchContainer}>
                   <CloseIcon className={styles.close_icon} />
-                </div>
-                <div onClick={onClickSearch}>
+                </button>
+                <button onClick={onClickSearch}>
                   Search
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -95,8 +95,8 @@ const HeaderMobile = ({ gotoCartPage, onClickCloseSearchContainer, onChangeSearc
           size={"SMALL"}
           onClickButton={onClickAuthButton}
         />
-      </div>
-    </div>
+      </section>
+    </nav>
   )
 };
 

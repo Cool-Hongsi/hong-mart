@@ -13,20 +13,20 @@ const DialogComponent = ({ dialogShow, dialogType, dialogTitle, dialogDesc, dial
         transitionDuration={0}
       >
         <div className={styles.container}>
-          <div className={styles.dialog_title}>
+          <p className={styles.dialog_title}>
             {dialogTitle}
-          </div>
-          <div className={styles.dialog_desc}>
+          </p>
+          <p className={styles.dialog_desc}>
             {dialogDesc}
-          </div>
+          </p>
 
           <div className={styles.dialog_button_container}>
-            <div className={styles.dialog_yes_button} onClick={() => onClickYesDialog!(dialogType, dialogSelectedProductId)}>
+            <button className={styles.dialog_yes_button} onClick={() => onClickYesDialog!(dialogType, dialogSelectedProductId)}>
               YES
-            </div>
-            <div className={styles.dialog_no_button} onClick={onCloseDialog}>
+            </button>
+            <button className={styles.dialog_no_button} onClick={onCloseDialog}>
               NO
-            </div>
+            </button>
           </div>
         </div>
       </Dialog>

@@ -43,7 +43,7 @@ const HeaderWeb = ({ gotoCartPage, onClickCloseSearchContainer, onChangeSearchIn
   };
 
   return (
-    <div className={styles.navigation}>
+    <nav className={styles.navigation}>
       <div className={styles.shop_button} onMouseEnter={onMouseEnterShopButton} onMouseLeave={onMouseLeaveShopButton}>
         Shop
         <div className={styles.shop_sub_menu}>
@@ -73,31 +73,31 @@ const HeaderWeb = ({ gotoCartPage, onClickCloseSearchContainer, onChangeSearchIn
             onKeyDownInput={onKeyDownSearchInput}
           />
           <div className={styles.search_container_bottom}>
-            <div onClick={onClickCloseSearchContainer}>
+            <button onClick={onClickCloseSearchContainer}>
               <CloseIcon className={styles.close_icon} />
-            </div>
-            <div onClick={onClickSearch}>
+            </button>
+            <button onClick={onClickSearch}>
               Search
-            </div>
+            </button>
           </div>
         </div>
       </div>
 
-      <div className={styles.cart_icon_container} onClick={gotoCartPage}>
+      <button className={styles.cart_icon_container} onClick={gotoCartPage}>
         <ShoppingCartOutlinedIcon className={styles.cart_icon} />
         {hongMartReducerSelector.cartInfo.length > 0 && (
           <div className={styles.cart_count}>
             {hongMartReducerSelector.cartInfo.length}
           </div>
         )}
-      </div>
+      </button>
 
       <Button
         title={sessionCheck(session, status)}
         size={"SMALL"}
         onClickButton={onClickAuthButton}
       />
-    </div>
+    </nav>
   )
 };
 

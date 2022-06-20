@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import styles from '../../styles/componentStyles/Cart.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/modules/rootReducer';
@@ -105,15 +105,15 @@ const Cart = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       {hongMartReducerSelector.cartInfo.length > 0
         ?
         <div className={styles.inner_container}>
           <div>
             <div className={styles.cart_title_and_delete_container}>
-              <div className={styles.cart_title}>
+              <span className={styles.cart_title}>
                 CART
-              </div>
+              </span>
               <Button
                 title={'Delete All'}
                 size={'MEDIUM'}
@@ -143,16 +143,15 @@ const Cart = () => {
               <span>ESTIMATED TOTAL</span>
               <span>${calculateEstimatedTotalPrice(hongMartReducerSelector.cartInfo).toFixed(2)}</span>
             </div>
-            <div className={styles.check_out_button} onClick={onClickCheckOutButton}>
+            <p className={styles.check_out_button} onClick={onClickCheckOutButton}>
               Go To Checkout
-            </div>
+            </p>
           </div>
-
         </div>
         :
-        <div className={styles.inner_container_empty_cart}>
+        <p className={styles.inner_container_empty_cart}>
           No product list in cart
-        </div>
+        </p>
       }
 
       {dialogToggle.dialogShow && (
@@ -166,7 +165,7 @@ const Cart = () => {
           onClickYesDialog={onClickYesDialog}
         />
       )}
-    </div>
+    </section>
   )
 };
 

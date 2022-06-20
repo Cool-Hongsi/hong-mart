@@ -127,7 +127,7 @@ const Header = () => {
   }, [session]);
 
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <div className={styles.inside_container}>
         <div className={styles.logo} onClick={onClickLogo}>
           HONG MART
@@ -163,7 +163,7 @@ const Header = () => {
           />
         }
       </div>
-    </div >
+    </header>
   )
 };
 

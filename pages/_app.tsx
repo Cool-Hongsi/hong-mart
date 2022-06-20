@@ -19,11 +19,13 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
       <SessionProvider session={session}> {/* Wrapping in order to use session in child components */}
         <Header />
-        <Component {...pageProps} />
+        <main>
+          <Component {...pageProps} />
+        </main>
         <Footer />
       </SessionProvider>
     </>
   )
 }
 
-export default wrapper.withRedux(MyApp);
+export default wrapper.withRedux(MyApp); // for using redux in NextJS

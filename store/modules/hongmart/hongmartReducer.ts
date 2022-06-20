@@ -118,15 +118,15 @@ export default function hongMartReducer(state = initState, action: HongMartReduc
         break;
       case READ_SET_VALUE_FOR_UPDATE_AND_DELETE:
         // UPDATE
-        draft.adminProductInfo[UPDATE_PRODUCT_ID] = action.payload._id;
-        draft.adminProductInfo[UPDATE_PRODUCT_CATEGORY] = action.payload.productCategory;
-        draft.adminProductInfo[UPDATE_PRODUCT_NAME] = action.payload.productName;
-        draft.adminProductInfo[UPDATE_PRODUCT_PRICE] = action.payload.productPrice;
-        draft.adminProductInfo[UPDATE_PRODUCT_PRICE_SALE] = action.payload.productPriceSale;
-        draft.adminProductInfo[UPDATE_PRODUCT_DESCRIPTION] = action.payload.productDescription;
+        draft.adminProductInfo[UPDATE_PRODUCT_ID] = action.payload._id ?? '';
+        draft.adminProductInfo[UPDATE_PRODUCT_CATEGORY] = action.payload.productCategory ?? '';
+        draft.adminProductInfo[UPDATE_PRODUCT_NAME] = action.payload.productName ?? '';
+        draft.adminProductInfo[UPDATE_PRODUCT_PRICE] = action.payload.productPrice ?? '';
+        draft.adminProductInfo[UPDATE_PRODUCT_PRICE_SALE] = action.payload.productPriceSale ?? '';
+        draft.adminProductInfo[UPDATE_PRODUCT_DESCRIPTION] = action.payload.productDescription ?? '';
         // DELETE
-        draft.adminProductInfo[DELETE_PRODUCT_ID] = action.payload._id;
-        draft.adminProductInfo[DELETE_PRODUCT_CATEGORY] = action.payload.productCategory;
+        draft.adminProductInfo[DELETE_PRODUCT_ID] = action.payload._id ?? '';
+        draft.adminProductInfo[DELETE_PRODUCT_CATEGORY] = action.payload.productCategory ?? '';
         break;
       case UPDATE_PRODUCT_REQUEST:
         draft.isLoading = true;

@@ -5,7 +5,7 @@ export const INPUT_TYPE = {
 
 export const SHOP_MENU_LIST = {
   FRUIT: 'fruit',
-  GROCERY: 'grocery',
+  VEGETABLE: 'vegetable',
   MEAL: 'meal',
 };
 
