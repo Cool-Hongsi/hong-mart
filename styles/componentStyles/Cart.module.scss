@@ -3,7 +3,6 @@
 @import '../mixinStyle';
 
 .container {
-  border: 2px solid red;
   @include displayFlex(row, center, center);
 
   .inner_container_empty_cart {

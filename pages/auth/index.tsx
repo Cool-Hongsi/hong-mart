@@ -16,7 +16,7 @@ const Auth = () => {
           This is personal project.
         </div>
         <div className={styles.auth_intro}>
-          You can simply sign in with 2 OAuth providers.
+          Please simply sign in with 2 OAuth providers.
         </div>
         <Link href={'/api/auth/signin'}>
           <a onClick={(e) => {
@@ -50,11 +50,8 @@ const Auth = () => {
 
 export default Auth;
 
-// SignIn 후 '/auth'로 직접 타이핑할 시, Auth Page로 가는 에러를 막기 위해.
-// getSession은 getServerSideProps 써야 함
-// Client에서 Session Check 해서 Redirect해도 되는데, Server에서 하는 이유는
-// Client에서는 '/auth' page로 이동해서 화면을 살짝보여주고, 확인 후 다시 Redirect하고
-// Server에서는 화면에 보여주기 전에 확인을 하면서 '/auth' page로 이동없이 Redirect 해준다.
+// To prevent typing '/auth' in url directly
+// getSession can use in getServerSideProps (Not getStaticProps)
 export const getServerSideProps: GetServerSideProps = async context => {
   const session = await getSession(context);
 

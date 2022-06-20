@@ -26,7 +26,6 @@
   @include displayFlex(row, center, center);
 
   .inner_container {
-    border: 2px solid red;
     width: $tabletSize;
     padding: 50px 0;
     @include displayFlex(column, center, center);

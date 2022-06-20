@@ -40,7 +40,7 @@ const initState: HongMartReducerStateInterface = {
   searchInfo: {
     [SEARCH_INFO_INPUT]: ''
   },
-  isLoading: false, // public으로 사용 가능! (근데 만약 한페이지에 여러 API에서 isLoading을 쓰면 그쪽도 Loading이 뜸..)
+  isLoading: false, // can be used as public
   adminLoginAPI: {
     message: '',
     result: false

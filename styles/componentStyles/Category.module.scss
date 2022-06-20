@@ -12,11 +12,15 @@
     font-size: 2rem;
     letter-spacing: 2px;
     box-shadow: 0 0px 10px variable.$boxShadowColor;
+
+    @include mobile {
+      padding: 35px 0;
+      font-size: 1.6rem;
+    }
   }
 
   .product_container {
     width: $tabletSize;
-    border: 2px solid blue;
     padding: 50px 0;
     text-align: center;
     display: grid;

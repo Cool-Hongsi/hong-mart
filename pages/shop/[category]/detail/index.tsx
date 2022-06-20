@@ -1,6 +1,3 @@
-// router.push({ pathname: SHOP + '/' + product.productCategory + DETAIL, query: { productId: product._id } })
-// /shop/meal/detail?productId=abcd
-
 import styles from '../../../../styles/componentStyles/Detail.module.scss';
 import { useState } from 'react';
 import { GetServerSideProps } from "next";
@@ -116,7 +113,7 @@ export default Detail;
 export const getServerSideProps: GetServerSideProps = async context => {
   const { params, query } = context;
   // console.log(params); // { category: 'meal' }
-  // console.log(query); // { category: 'meal', productId: 'abc' }
+  // console.log(query); // { category: 'meal', productId: 'abcd' }
 
   const response = await fetch(API_ADDRESS + READ_SINGLE_PRODUCT + `?productCategory=${query.category}&productId=${query.productId}`, {
     method: 'GET',
@@ -133,3 +130,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
     }
   }
 };
+
+// router.push({ pathname: SHOP + '/' + product.productCategory + DETAIL, query: { productId: product._id } })
+// /shop/meal/detail?productId=abcd

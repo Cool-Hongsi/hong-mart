@@ -4,8 +4,6 @@ import clientPromise from "../auth/lib/mongodb";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { query } = req;
 
-  console.log(query);
-
   let data: {}[] = [];
 
   try {
@@ -13,7 +11,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     // Get collection list
     const collectionList = await dbConnect.db('product').collections();
 
-    // Find matching data with query.searchby (options 'i' => Not care about uppercase and lowercase)
+    // Find matching data with query.searchby (options 'i' => Accept both uppercase and lowercase)
     for (let i = 0; i < collectionList.length; i++) {
       console.log(`Collection Name: ${collectionList[i].collectionName}`);
 

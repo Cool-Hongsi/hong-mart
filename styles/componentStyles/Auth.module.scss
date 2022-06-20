@@ -9,13 +9,16 @@
   .auth_list_container {
     width: $tabletSize;
     text-align: center;
-    border: 2px solid red;
     padding: 0 20px 100px 20px;
     @include displayFlex(column, center, center);
 
     .auth_intro {
       font-size: 1.5rem;
       line-height: 2.8rem;
+
+      @include mobile {
+        font-size: 1.3rem;
+      }
     }
 
     .oauth_container {

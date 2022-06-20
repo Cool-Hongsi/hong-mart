@@ -16,19 +16,20 @@ export default NextAuth({
       clientId: (isDev) ? process.env.GOOGLE_ID_DEV! : process.env.GOOGLE_ID_PROD!,
       clientSecret: (isDev) ? process.env.GOOGLE_SECRET_DEV! : process.env.GOOGLE_SECRET_PROD!,
     }),
-    // ...add more oauth provider here
+    // ...Add more oauth provider here
   ],
   adapter: MongoDBAdapter(clientPromise),
+
   // session: {
   //   strategy: 'jwt',
   //   maxAge: 3 * 60 * 60, // 3 hours
   // },
+
   // callbacks: {
   //   jwt: async ({ token, user }) => {
   //     if (user) {
   //       token.accessToken = user.token
   //     }
-
   //     return token;
   //   },
   //   session: async ({ session, token }) => {

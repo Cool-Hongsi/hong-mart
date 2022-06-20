@@ -10,14 +10,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
+        <meta charSet='utf-8' />
         <title>Hong Mart</title>
         <meta name='description' content='Awesome Hong Mart' />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.png' />
       </Head>
 
-      <SessionProvider session={session}> {/* 하위에서 session을 사용하기 위해 wrapping */}
+      <SessionProvider session={session}> {/* Wrapping in order to use session in child components */}
         <Header />
         <Component {...pageProps} />
         <Footer />

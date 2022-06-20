@@ -1,3 +1,17 @@
+import { Session } from "inspector";
+
+export interface HeaderInterface {
+  gotoCartPage: () => void,
+  onClickCloseSearchContainer: () => void,
+  onChangeSearchInput: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onClickSearchIcon: () => void,
+  onKeyDownSearchInput: (e: KeyboardEvent) => void,
+  onClickSearch: () => void,
+  onClickAuthButton: () => void,
+  session: Session | null | {},
+  status: string,
+};
+
 export interface ButtonInterface {
   title: string,
   size: string,

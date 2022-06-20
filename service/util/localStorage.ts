@@ -12,7 +12,7 @@ export const addToCart = (product: ProductInterface, count: number) => {
       count // count: count
     });
   } else {
-    currentCart[repeatedProductIndex].count += count;
+    currentCart[repeatedProductIndex].count += count; // just increase count
   }
 
   localStorage.setItem('cart', JSON.stringify(currentCart));

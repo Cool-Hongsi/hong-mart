@@ -17,7 +17,7 @@ const TableComponent = ({ theadList, tbodyList, onClickButton }: TableInterface)
         </tr>
       </thead>
       <tbody>
-        {tbodyList?.map((tbodyData: CartInterface, index: number) => {
+        {tbodyList?.map((tbodyData: CartInterface) => {
           return (
             <tr key={tbodyData._id}>
               <th className={styles.cart_table_cell_with_image}>

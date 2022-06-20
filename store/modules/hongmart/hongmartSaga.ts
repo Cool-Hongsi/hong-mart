@@ -21,6 +21,7 @@ const { CREATE_PRODUCT_CATEGORY, CREATE_PRODUCT_NAME, CREATE_PRODUCT_PRICE, CREA
 function* hongMartAdminLoginRequestFunc(action: HongMartReducerActionInterface): any {
   const reducerSelect = yield select();
 
+  // Not mandatory
   yield addDelay();
 
   try {
@@ -41,6 +42,7 @@ function* hongMartAdminLoginRequestFunc(action: HongMartReducerActionInterface):
 };
 
 function* hongMartCreateProductRequestFunc(action: HongMartReducerActionInterface): any {
+  /* ***** Image Upload API ***** */
   const body = new FormData();
 
   body.append("file", action.payload);
@@ -62,6 +64,7 @@ function* hongMartCreateProductRequestFunc(action: HongMartReducerActionInterfac
 
   const reducerSelect = yield select();
 
+  /* ***** Create Product API ***** */
   try {
     const response = yield createProductAPI({
       productCategory: reducerSelect.hongMartReducer.adminProductInfo[CREATE_PRODUCT_CATEGORY],

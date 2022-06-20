@@ -5,6 +5,6 @@ import { hongMartSagaWatcher } from './hongmart/hongmartSaga';
 export default function* rootSaga() {
   yield all([
     hongMartSagaWatcher(),
-    // ...
+    // Add other saga watcher here...
   ]);
 };

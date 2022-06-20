@@ -22,7 +22,6 @@ const { CREATE_PRODUCT_CATEGORY, CREATE_PRODUCT_NAME, CREATE_PRODUCT_PRICE, CREA
 const { GENERAL_INPUT } = INPUT_TYPE;
 
 const Admin = () => {
-
   const hongMartReducerSelector = useSelector((state: RootState) => state.hongMartReducer);
   const dispatch = useDispatch();
 
@@ -54,6 +53,7 @@ const Admin = () => {
   };
 
   const onClickCreateProduct = () => {
+    // Can check it with [] validation
     if (isNotEmptyString(hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_CATEGORY]) &&
       isNotEmptyString(hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_NAME]) &&
       isNotEmptyString(hongMartReducerSelector.adminProductInfo[CREATE_PRODUCT_PRICE]) &&

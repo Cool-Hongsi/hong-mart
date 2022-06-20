@@ -25,6 +25,10 @@
         color: variable.$fontColorRed;
         font-style: italic;
         border-bottom: 3px solid variable.$fontColorRed;
+
+        @include mobile {
+          font-size: 3rem;
+        }
       }
     }
   }

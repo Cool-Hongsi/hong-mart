@@ -3,11 +3,9 @@
 @import '../mixinStyle';
 
 .container {
-  border: 2px solid red;
   @include displayFlex(row, center, center);
 
   .inner_container {
-    border: 2px solid blue;
     width: $tabletSize;
     text-align: center;
     padding: 80px 0;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import styles from '../../styles/componentStyles/Cart.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/modules/rootReducer';
@@ -40,7 +40,14 @@ const Cart = () => {
   });
 
   const onCloseDialog = () => {
-    setDialogToggle({ ...dialogToggle, dialogShow: false, dialogType: '', dialogTitle: '', dialogDesc: '', dialogSelectedProductId: '' });
+    setDialogToggle({
+      ...dialogToggle,
+      dialogShow: false,
+      dialogType: '',
+      dialogTitle: '',
+      dialogDesc: '',
+      dialogSelectedProductId: ''
+    });
   };
 
   // Open dialog with delete all
@@ -122,7 +129,6 @@ const Cart = () => {
               tbodyList={hongMartReducerSelector.cartInfo}
               onClickButton={onClickDeleteOneCart}
             />
-
           </div>
           <div className={styles.total_price_container}>
             <div>

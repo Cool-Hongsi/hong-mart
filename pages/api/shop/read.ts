@@ -4,8 +4,6 @@ import clientPromise from "../auth/lib/mongodb";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { query } = req;
 
-  console.log(query.productCategory);
-
   try {
     let dbConnect = await clientPromise;
     const data: {}[] = [];

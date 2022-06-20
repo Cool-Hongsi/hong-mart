@@ -8,6 +8,10 @@
   .increase_decrease_button {
     @include buttonStyle(40px, 40px, variable.$backgroundColorLightGrey, variable.$fontColorDark);
 
+    @include mobile {
+      @include buttonStyle(50px, 40px, variable.$backgroundColorLightGrey, variable.$fontColorDark);
+    }
+
     .minus_plus_icon {
       font-size: .9rem;
     }

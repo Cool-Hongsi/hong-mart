@@ -19,7 +19,6 @@ const IncreaseDecreaseButton = () => {
     dispatch(hong_mart_initialize_product_count());
   }, [dispatch]);
 
-
   const onClickDecrease = () => {
     if (hongMartReducerSelector.productCount > 1) {
       dispatch(hong_mart_decrease_product_count());

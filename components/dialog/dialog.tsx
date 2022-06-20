@@ -3,9 +3,9 @@ import React from 'react';
 import Dialog from '@mui/material/Dialog';
 import { DialogInterface } from '../../service/type';
 
-const DialogComponent = ({ dialogShow, dialogType, dialogTitle, dialogDesc, dialogSelectedProductId, 
+const DialogComponent = ({ dialogShow, dialogType, dialogTitle, dialogDesc, dialogSelectedProductId,
   onCloseDialog, onClickYesDialog }: DialogInterface) => {
-  return(
+  return (
     <>
       <Dialog
         open={dialogShow}
@@ -19,7 +19,7 @@ const DialogComponent = ({ dialogShow, dialogType, dialogTitle, dialogDesc, dial
           <div className={styles.dialog_desc}>
             {dialogDesc}
           </div>
-          
+
           <div className={styles.dialog_button_container}>
             <div className={styles.dialog_yes_button} onClick={() => onClickYesDialog!(dialogType, dialogSelectedProductId)}>
               YES
@@ -35,19 +35,3 @@ const DialogComponent = ({ dialogShow, dialogType, dialogTitle, dialogDesc, dial
 };
 
 export default DialogComponent;
-
-// export default function AlertDialog() {
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-
-//   return (
-    
-//   );
-// }

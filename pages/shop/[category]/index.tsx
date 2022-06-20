@@ -95,7 +95,7 @@ export const getStaticProps: GetStaticProps = async context => {
     props: {
       productList: data.result
     },
-    revalidate: 10 // ISR => No need to rebuild
+    revalidate: 10 // ISR => No need to rebuild (This will regenerate page after 10 sec)
   }
 };
 

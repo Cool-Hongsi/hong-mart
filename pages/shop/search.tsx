@@ -15,9 +15,6 @@ const { LIST } = PRODUCT_DETAIL_TYPE;
 const { SEARCH_PRODUCT } = API_CONST;
 
 const Search = ({ productList }: ProductListInterface) => {
-
-  console.log(productList);
-
   const router = useRouter();
 
   const onClickProductImage = (product: ProductInterface) => {
@@ -63,10 +60,15 @@ const Search = ({ productList }: ProductListInterface) => {
 
 export default Search;
 
+// Search Product (SSR)
+// Generate HTML and Data-Fetching in every request
+// Can be used for data which is changed frequently
 export const getServerSideProps: GetServerSideProps = async context => {
   const { query } = context;
 
   // Search by (productName)
+  // DEV => http://localhost:3000/api/shop/search?searchby=abcd
+  // PROD => https://hong-mart.vercel.app/api/shop/search?searchby=abcd
   const response = await fetch(API_ADDRESS + SEARCH_PRODUCT + `?searchby=${query.searchby}`, {
     method: 'GET',
     body: null,
